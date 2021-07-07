@@ -1,6 +1,110 @@
-.js-gally {
-    width: 100%;
+.js-gallery {
+    width: 1050px;
+    height: 1050px;
+
+    display: inline-block;
+
     & li {
-        width: 100%;
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+    }
+}
+
+
+.count2 {
+    & img {
+        width: 1000px;
+    }
+
+}
+
+.count3 {
+    & li {
+        width: 500px;
+        height: 500px;
+        margin: 0;
+        & img {
+            width: 500px;
+            height: 500px;
+            margin: 0;
+        }
+    }
+    li:nth-of-type(2){ 
+        
+            width: 500px;
+            height: 1000px;
+            margin: 0;
+            & img {
+                width: 500px;
+                height: 1000px;
+                margin: 0;
+            }
+        
+    }
+} 
+
+.count4 {
+    & li {
+        width: 500px;
+        height: 500px;
+        margin: 0;
+        & img {
+            width: 500px;
+            height: 500px;
+            margin: 0;
+        }
+    }
+    
+}
+
+.count5 {
+    & li {
+        width: 500px;
+        height: 333px;
+        margin: 0;
+        & img {
+            width: 500px;
+            height: 333px;
+            margin: 0;
+        }
+    }
+    li:nth-of-type(1){ 
+        
+        width: 500px;
+        height: 333px;
+        margin: 0;
+        & img {
+            width: 500px;
+            height: 333px;
+            margin: 0;
+        }
+    
+    }
+
+    li:nth-of-type(3){ 
+        
+        width: 500px;
+        height: 333px;
+        margin: 0;
+        & img {
+            width: 500px;
+            height: 333px;
+            margin: 0;
+        }
+    
+    }
+}
+
+.count6 {
+    & li {
+        width: 500px;
+        height: 500px;
+        margin: 0;
+        & img {
+            width: 500px;
+            height: 500px;
+            margin: 0;
+        }
     }
 }
