@@ -1,19 +1,23 @@
-var cnt = document.getElementById("list").childElementCount;
-console.log(cnt); 
-const list = document.querySelector('#list')
-if (cnt === 1)  {
-   list.classList.add('count1');
+var parent = document.querySelector('.js-gallery');
+console.log(parent);
+var cnt = $(".js-gallery li").length;
+
+console.log(cnt);
+if (cnt == 1)  {
+   parent.classList.add('count1');
  } else if (cnt == 2)  {
-   list.classList.add('count2');
+   parent.classList.add('count2');
  }else if (cnt == 3)  {
-   list.classList.add('count3');
+   parent.classList.add('count3');
  }else if (cnt == 4)  {
-   list.classList.add("count4");
+   parent.classList.add("count4");
  }else if (cnt == 5)  {
-   list.classList.add("count5");
+   parent.classList.add("count5");
  }else {
    var minus = cnt-4;
-   console.log(minus)
-   document.querySelector('.plus'),innerHTML.`<span>${minus}</span>`;
-   list.classList.add("count6");
+   console.log(minus);
+   parent.classList.add("count6");
+   var textbox_element = document.querySelector('#list');
+   var new_element = innerHTML = `<h1>+${minus}</h1>`;
+   textbox_element.before(new_element);
  }
