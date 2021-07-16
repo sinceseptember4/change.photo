@@ -1,40 +1,39 @@
-const parent = document.querySelector('.js-gallery');
-const cnt = document.querySelectorAll('li').length;
-const img = document.querySelectorAll('img');
+const aaa = document.querySelectorAll('.js-gallery');
 
-let width =img[0].width;
-let height =img[0].height;
-let aspect1 = width / height;
-console.log(aspect1);
+aaa.forEach(function(v){
+  let ul = v.querySelector('ul');
+  let cnt = ul.childElementCount;
+  let img = v.querySelector('img');
+  console.log(cnt)
+  let width =img.width;
+  let height =img.height;
+  let aspect1 = width / height;
+  console.log(aspect1);
 
-let width3 =img[1].width;
-console.log(width3)
-let height3 =img[1].height;
-console.log(height3)
-let aspect3 = width3 / height3;
-console.log(aspect3); 
 
 
 if (cnt == 1)  {
-   parent.classList.add('count1');
+   v.classList.add('count1');
  } else if (cnt == 2 && aspect1 < 1)  {
-   parent.classList.add('count2-2');
- }else if (cnt == 2 && aspect1 > 1)  {
-  parent.classList.add('count2');
- }else if (cnt == 3 )  {
-  parent.classList.add('count3');
+   v.classList.add('count2-2');
+ }else if (cnt == 2)  {
+  v.classList.add('count2');
+ }else if (cnt == 3 && aspect1 > 1)  {
+  v.classList.add('count3-2');
  }else if (cnt == 3)  {
-  parent.classList.add('count3');
+  v.classList.add('count3');
  }else if (cnt == 4)  {
-   parent.classList.add("count4");
+   v.classList.add("count4");
  }else if (cnt == 5)  {
-   parent.classList.add("count5");
+   v.classList.add("count5");
  }else {
    var minus = cnt-4;
    console.log(minus);
-   parent.classList.add("count6");
-   var textbox_element = $(".js-gallery a");
+   v.classList.add("count6");
+   var textbox_element = v.querySelector('li');
    var new_element =`<h1>+${minus}</h1>`;
    console.log(new_element );
-   textbox_element.after(new_element);
+   textbox_element.innerHTML.new_element
 }
+
+});

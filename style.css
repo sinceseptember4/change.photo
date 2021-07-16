@@ -1,6 +1,7 @@
 .partent {
   width: 1000px;
   height: 1000px;
+  margin-bottom: 100px;
 }
 
 .js-gallery {
@@ -46,29 +47,35 @@
 }
 
 .count3 li {
-  width: 49%;
-  height: 49%;
+  position: relative;
+  width: 49.7%;
+  height: 49.7%;
   margin: 0;
 }
 
 .count3 li:nth-of-type(1) {
   width: 49%;
   height: 100%;
-  top: -500px;
+  top: 0;
 }
 
 .count3 li:nth-of-type(2) {
-  top: 5000px;
-  left: 1000px;
+  top: -50%;
+  left: 0;
+}
+
+.count3 li:nth-of-type(3) {
+  top: -50.3%;
+  left: 49.5%;
 }
 
 .count3-2 li {
-  width: 49%;
-  height: 49%;
+  width: 49.7%;
+  height: 49.7%;
   margin: 0;
 }
 
-.count3-2 li:nth-of-type(3) {
+.count3-2 li:nth-of-type(1) {
   width: 100%;
   height: 49%;
 }
@@ -97,6 +104,7 @@
   opacity: 0;
   width: 0;
   height: 0;
+  position: relative;
 }
 
 .count6 li:nth-of-type(1) {
@@ -125,8 +133,6 @@
 }
 
 .count6 li:nth-of-type(5) {
-  position: relative;
-  top: -0.5%;
   left: 0;
   width: 32%;
   height: 32%;
@@ -135,7 +141,7 @@
 
 .count6 li:nth-of-type(5) h1 {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
