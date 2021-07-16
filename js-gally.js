@@ -9,9 +9,7 @@ gallery.forEach(function(v){
   let height =img.height;
   let aspect1 = width / height;
   console.log(aspect1);
-if (aspect1>!0.1){
-}else{  location.reload();
-}
+
 if (cnt == 1)  {
    v.classList.add('count1');
  } else if (cnt == 2 && aspect1 < 1)  {
