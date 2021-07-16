@@ -103,6 +103,7 @@
   opacity: 0;
   width: 0;
   height: 0;
+  position: relative;
 }
 
 .count6 li:nth-of-type(1) {
@@ -141,7 +142,7 @@
 
 .count6 li:nth-of-type(5) h1 {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);

@@ -119,6 +119,7 @@
         opacity: 0;
         width: 0;
         height: 0;
+        position: relative;
     }
     li:nth-of-type(1){ 
         width: 49%;
@@ -151,7 +152,7 @@
         opacity: 1;
         h1 {
             position: absolute;
-            top: 40%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             margin: 0;
