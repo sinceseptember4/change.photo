@@ -7,13 +7,6 @@ let height =img[0].height;
 let aspect1 = width / height;
 console.log(aspect1);
 
-let width3 =img[1].width;
-console.log(width3)
-let height3 =img[1].height;
-console.log(height3)
-let aspect3 = width3 / height3;
-console.log(aspect3); 
-
 
 if (cnt == 1)  {
    parent.classList.add('count1');
@@ -21,8 +14,8 @@ if (cnt == 1)  {
    parent.classList.add('count2-2');
  }else if (cnt == 2 && aspect1 > 1)  {
   parent.classList.add('count2');
- }else if (cnt == 3 )  {
-  parent.classList.add('count3');
+ }else if (cnt == 3 && aspect1 > 1 )  {
+  parent.classList.add('count3-2');
  }else if (cnt == 3)  {
   parent.classList.add('count3');
  }else if (cnt == 4)  {
