@@ -1,24 +1,25 @@
-const aaa = document.querySelectorAll('.js-gallery');
+const gallery = document.querySelectorAll('.js-gallery');
 
-aaa.forEach(function(v){
+gallery.forEach(function(v){
   let ul = v.querySelector('ul');
   let cnt = ul.childElementCount;
   let img = v.querySelector('img');
-  console.log(cnt)
+
   let width =img.width;
   let height =img.height;
   let aspect1 = width / height;
   console.log(aspect1);
-
-
+if (aspect1>!0.1){
+}else{  location.reload();
+}
 if (cnt == 1)  {
    v.classList.add('count1');
  } else if (cnt == 2 && aspect1 < 1)  {
    v.classList.add('count2-2');
- }else if (cnt == 2 && aspect1 > 1)  {
+ }else if (cnt == 2)  {
   v.classList.add('count2');
- }else if (cnt == 3 )  {
-  v.classList.add('count3');
+ }else if (cnt == 3 && aspect1 > 1)  {
+  v.classList.add('count3-2');
  }else if (cnt == 3)  {
   v.classList.add('count3');
  }else if (cnt == 4)  {
@@ -29,11 +30,8 @@ if (cnt == 1)  {
    var minus = cnt-4;
    console.log(minus);
    v.classList.add("count6");
-   var textbox_element = v.querySelector('li');
-   var new_element =`<h1>+${minus}</h1>`;
-   console.log(new_element );
-   textbox_element.after(new_element);
+   var aaa = ul.children[4];
+   var bbb =`<h1>+${minus}</h1>`;
+   aaa.insertAdjacentHTML('beforeend', `<h1>+${minus}</h1>`);
 }
-
 });
-
