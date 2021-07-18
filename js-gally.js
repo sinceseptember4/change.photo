@@ -8,8 +8,11 @@ gallery.forEach(function(v){
   let width =img.width;
   let height =img.height;
   let aspect1 = width / height;
+
+  console.log(width);
+  console.log(height);
   console.log(aspect1);
-if (aspect1>!0.1){
+if (height>!0.000000001 && width>!0.000000001){
 }else{  location.reload();
 }
 if (cnt == 1)  {
