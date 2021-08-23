@@ -1,4 +1,4 @@
-const gallery = document.querySelectorAll('.js-gallery');
+const gallery = document.querySelectorAll('.change-photo');
 
 gallery.forEach(function(v){
   let ul = v.querySelector('ul');
