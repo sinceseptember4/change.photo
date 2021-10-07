@@ -1,4 +1,4 @@
-const gallery = document.querySelectorAll('.js-gallery');
+const gallery = document.querySelectorAll('.change-photo');
 
 gallery.forEach(function(v){
   let ul = v.querySelector('ul');
@@ -8,12 +8,12 @@ gallery.forEach(function(v){
   let width =img.width;
   let height =img.height;
   let aspect1 = width / height;
-
+  console.log(width);
   console.log(height);
   console.log(aspect1);
+
 if (height>!0.000000001 && width>!0.000000001){
-}else{  
-  location.reload();
+}else{  location.reload();
 }
 if (cnt == 1)  {
    v.classList.add('count1');
@@ -30,15 +30,13 @@ if (cnt == 1)  {
  }else if (cnt == 5)  {
    v.classList.add("count5");
  }else {
-  v.classList.add("count6");
-   setTimeout
    var minus = cnt-4;
-   var aaa = ul.children[4];
-   var bbb =`<h1>+${minus}</h1>`;
-   var ccc = img.children[4];
-   let width =ccc.width;
-   console.log(width);
-   aaa.insertAdjacentHTML('beforeend', `<h1>+${minus}</h1>`);
-
+   console.log(minus);
+   v.classList.add("count6");
+   var children4 = ul.children[4];
+   var clientHeight = children4.clientHeight;
+   var countfontsize = `${clientHeight*0.1}px`;
+   children4.style.fontSize = countfontsize;
+   children4.insertAdjacentHTML('beforeend', `<h1>+${minus}</h1>`);
 }
 });
