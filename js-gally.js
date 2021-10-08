@@ -9,9 +9,6 @@ gallery.forEach(function(v){
   let height =img.height;
   let aspect1 = width / height;
 
-  console.log(width);
-  console.log(height);
-  console.log(aspect1);
 if (height>!0.000000001 && width>!0.000000001){
 }else{  location.reload();
 }
@@ -33,8 +30,7 @@ if (cnt == 1)  {
    var minus = cnt-4;
    console.log(minus);
    v.classList.add("count6");
-   var aaa = ul.children[4];
-   var bbb =`<h1>+${minus}</h1>`;
-   aaa.insertAdjacentHTML('beforeend', `<h1>+${minus}</h1>`);
+   var photo4 = ul.children[4];
+   photo4.insertAdjacentHTML('beforeend', `<h1>+${minus}</h1>`);
 }
 });
