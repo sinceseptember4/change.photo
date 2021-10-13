@@ -1,28 +1,24 @@
-.partent {
-  width: 1000px;
-  height: 1000px;
-  margin-bottom: 100px;
-}
-
-.js-gallery {
+.change-photo {
   width: 100%;
   height: 100%;
-  font-size: 16px;
+  margin: 0 auto;
 }
 
-.js-gallery li {
+.change-photo li {
   list-style: none;
 }
 
-.js-gallery li h1 {
-  font-size: 0;
-}
-
-.js-gallery img {
+.change-photo img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.default {
+  width: 500px;
+  height: 500px;
+  margin-bottom: 50px;
 }
 
 .count1 ul {
@@ -245,10 +241,11 @@
 }
 
 .count6 li {
-  opacity: 0;
+  display: none;
 }
 
 .count6 li:nth-of-type(1) {
+  display: block;
   opacity: 1;
   -ms-grid-column: 1;
       grid-column-start: 1;
@@ -259,6 +256,7 @@
 }
 
 .count6 li:nth-of-type(2) {
+  display: block;
   opacity: 1;
   -ms-grid-column: 4;
       grid-column-start: 4;
@@ -269,6 +267,7 @@
 }
 
 .count6 li:nth-of-type(3) {
+  display: block;
   opacity: 1;
   -ms-grid-column: 1;
       grid-column-start: 1;
@@ -279,6 +278,7 @@
 }
 
 .count6 li:nth-of-type(4) {
+  display: block;
   opacity: 1;
   -ms-grid-column: 3;
       grid-column-start: 3;
@@ -289,6 +289,7 @@
 }
 
 .count6 li:nth-of-type(5) {
+  display: block;
   opacity: 1;
   position: relative;
   -ms-grid-column: 5;
@@ -308,6 +309,5 @@
   margin: 0;
   z-index: 10px;
   color: white;
-  font-size: 500%;
 }
 /*# sourceMappingURL=style.css.map */
