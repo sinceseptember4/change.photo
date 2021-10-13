@@ -1,8 +1,6 @@
 "use strict";
 let inview = false;
 const gallery = document.querySelectorAll('.change-photo');
-if (inview) {
-}
 gallery.forEach(function (v) {
     let ul = v.querySelector('ul');
     let cnt = ul.childElementCount;
@@ -50,6 +48,7 @@ const lists = Array.from(document.querySelectorAll("img"));
 lists.forEach(li => {
     li.addEventListener("click", e => {
         inview = true;
+        Fullscreen();
         let index = lists.findIndex(list => list === e.target);
         let partent = e.target.parentElement.parentElement.parentElement;
         console.log(partent);
@@ -63,4 +62,15 @@ lists.forEach(li => {
         let serectnow = imgs[serect];
         console.log(serectnow);
     });
+    function Fullscreen() {
+        document.body.requestFullscreen();
+        const body = document.querySelector('body');
+        body.insertAdjacentHTML('afterbegin', '<div id=inview><div id=inview-img></div><div id=inview-up></div><div id=inview-down></div><div id=inview-out></div></div>');
+    }
+    ;
+    function exit() {
+        document.exitFullscreen();
+        inview = false;
+    }
+    ;
 });
