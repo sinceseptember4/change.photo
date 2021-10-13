@@ -1,18 +1,16 @@
 "use strict";
-var gallery = document.querySelectorAll('.change-photo');
+let inview = false;
+const gallery = document.querySelectorAll('.change-photo');
+if (inview) {
+}
 gallery.forEach(function (v) {
-    var ul = v.querySelector('ul');
-    var cnt = ul.childElementCount;
-    var img = v.querySelector('img');
-    function sss() {
-        var width = img.width;
-        var height = img.height;
-        var aspect1 = width / height;
-        if (height > !0.000000001 && width > !0.000000001) {
-        }
-        else {
-            location.reload();
-        }
+    let ul = v.querySelector('ul');
+    let cnt = ul.childElementCount;
+    let img = v.querySelector('img');
+    function style() {
+        let width = img.width;
+        let height = img.height;
+        let aspect1 = width / height;
         if (cnt == 1) {
             v.classList.add('count1');
         }
@@ -36,15 +34,33 @@ gallery.forEach(function (v) {
         }
         else {
             var minus = cnt - 4;
-            console.log(minus);
             v.classList.add("count6");
             var children4 = ul.children[4];
             var clientHeight = children4.clientHeight;
-            var countfontsize = clientHeight * 0.1 + "px";
+            var countfontsize = `${clientHeight * 0.1}px`;
             children4.style.fontSize = countfontsize;
-            children4.insertAdjacentHTML('beforeend', "<h1>+" + minus + "</h1>");
+            children4.insertAdjacentHTML('beforeend', `<h1>+${minus}</h1>`);
         }
     }
     ;
-    setTimeout(sss, 50);
+    setTimeout(style, 10);
+});
+;
+const lists = Array.from(document.querySelectorAll("img"));
+lists.forEach(li => {
+    li.addEventListener("click", e => {
+        inview = true;
+        let index = lists.findIndex(list => list === e.target);
+        let partent = e.target.parentElement.parentElement.parentElement;
+        console.log(partent);
+        let slideimgs = partent.querySelectorAll("img");
+        console.log(e.target);
+        let imgs = [];
+        slideimgs.forEach(i => {
+            imgs.push(i.getAttribute('src'));
+        });
+        let serect = [].slice.call(partent.children).indexOf(e.target.parentElement.parentElement);
+        let serectnow = imgs[serect];
+        console.log(serectnow);
+    });
 });
