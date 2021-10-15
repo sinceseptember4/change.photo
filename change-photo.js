@@ -1,5 +1,4 @@
 "use strict";
-let inview = false;
 const gallery = document.querySelectorAll('.change-photo');
 <<<<<<< HEAD
 
@@ -96,8 +95,6 @@ gallery.forEach(function (v) {
 const lists = Array.from(document.querySelectorAll("img"));
 lists.forEach(li => {
     li.addEventListener("click", e => {
-        inview = true;
-        Fullscreen();
         let index = lists.findIndex(list => list === e.target);
         let partent = e.target.parentElement.parentElement.parentElement;
         console.log(partent);
@@ -108,18 +105,50 @@ lists.forEach(li => {
             imgs.push(i.getAttribute('src'));
         });
         let serect = [].slice.call(partent.children).indexOf(e.target.parentElement.parentElement);
-        let serectnow = imgs[serect];
-        console.log(serectnow);
-    });
-    function Fullscreen() {
+        console.log(serect);
+        var serectnow = "";
+        var el = "";
+        let inviewhtml = "";
         document.body.requestFullscreen();
-        const body = document.querySelector('body');
-        body.insertAdjacentHTML('afterbegin', '<div id=inview><div id=inview-img></div><div id=inview-up></div><div id=inview-down></div><div id=inview-out></div></div>');
-    }
-    ;
-    function exit() {
-        document.exitFullscreen();
-        inview = false;
-    }
-    ;
+        Fullscreen(serect);
+        function Fullscreen(i) {
+            if (i != undefined) {
+                const body = document.querySelector('body');
+                serectnow = imgs[i];
+                console.log(serectnow);
+                inviewhtml = `<div id=inview><div id=inview-exit><span></span><span></span></div><img id=inview-img src = ${serectnow}><div id=inview-up><span></span><span></span></div><div id=inview-down><span></span><span></span></div></div>`;
+                body.insertAdjacentHTML('afterbegin', inviewhtml);
+                document.getElementById("inview-exit").onclick = function () {
+                    el = document.getElementById('inview');
+                    el.remove();
+                    setTimeout(exitFullscreen, 10);
+                };
+                document.body.addEventListener('keydown', event => {
+                    if (key_code == 27) {
+                        console.log("esc");
+                    }
+                });
+                document.getElementById("inview-up").onclick = function () {
+                    el = document.getElementById('inview');
+                    el.remove();
+                    serect = serect + 1;
+                    console.log(serect);
+                    Fullscreen(serect);
+                };
+                document.getElementById("inview-down").onclick = function () {
+                    el = document.getElementById('inview');
+                    el.remove();
+                    serect = serect - 1;
+                    console.log(serect);
+                    Fullscreen(serect);
+                };
+                function exitFullscreen() {
+                    document.exitFullscreen();
+                }
+                ;
+            }
+        }
+    });
 });
+function up() {
+}
