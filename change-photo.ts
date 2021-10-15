@@ -1,4 +1,4 @@
-let inview :boolean= false;
+
 const gallery : any= document.querySelectorAll('.change-photo');
 
 
@@ -48,8 +48,6 @@ gallery.forEach(function(v){
 const lists = Array.from(document.querySelectorAll("img"));
 lists.forEach(li => {
   li.addEventListener("click", e => {
-    inview = true;
-    Fullscreen ()
     let index = lists.findIndex(list => list === e.target);
     let partent = e.target.parentElement.parentElement.parentElement;
     console.log(partent);
@@ -63,21 +61,39 @@ lists.forEach(li => {
     let serect = [].slice.call( partent.children ).indexOf( e.target.parentElement.parentElement ) ;
 
 
-    let serectnow = imgs[serect];
+    let serectnow :string= imgs[serect];
     console.log(serectnow);
+    let inviewhtml:string = `<div id=inview><img id=inview-img src = ${serectnow}><div id=inview-up></div><div id=inview-down></div><div id=inview-exit></div></div>`;
+    Fullscreen (inviewhtml);
+    function Fullscreen (i){
+      if (i != undefined) {
+        const body = document.querySelector('body');
+  
+        body.insertAdjacentHTML('afterbegin', i);
+        document.body.requestFullscreen();
+ 
+        }
+      }
+      document.getElementById("inview-exit").onclick = function() {
+        var el = document.getElementById('inview');
+        el.remove();
 
+        function exitFullscreen () {
+          document.exitFullscreen();
+          };
+        setTimeout(	exitFullscreen ,100);
 
-
+      };
+  
+    };
   });
 
-  function Fullscreen (){
-    document.body.requestFullscreen();
-    const body = document.querySelector('body');
-    body.insertAdjacentHTML('afterbegin', '<div id=inview><div id=inview-img></div><div id=inview-up></div><div id=inview-down></div><div id=inview-out></div></div>');
-      
-  };
+  
 
-  function exit (){
-    document.exitFullscreen();
-    inview= false;
-  };
+
+
+  function up () {
+    serect+1
+  }
+
+

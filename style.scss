@@ -254,6 +254,16 @@
   color: black;
 }
 #inview-img {
-  width: 100%;
-  height: 100%;
+  width: 1000px;
+  height: auto;
+  opacity: 1;
+
+}
+
+#inview-exit {
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  color: blue;
+  z-index: 100;
 }
