@@ -249,24 +249,28 @@
 }
 
 #inview {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: 1500px;
   color: black;
 }
 #inview-img {
-  width: 1000px;
-  margin: 100px;
+  width: auto;
+  max-width: 1000px;
+  height: auto;
+  max-height: 1000px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 #inview-exit {
-  position: absolute;
+  position: relative;
   float: right;
   width: 100px;
   height: 100px;
-  opacity: 1;
   font-size: 1.5px;
-  margin: 0 0 ;
+  margin: 0 0;
   border: none;
   outline: none !important;
   cursor: pointer;
@@ -287,14 +291,15 @@
 }
 
 #inview-up {
-
   float: right;
   position: relative;
   width: 100px;
   height: 100px;
   opacity: 1;
   font-size: 1.5px;
-  margin: 45% 0;
+  top: 30%;
+  left: 7%;
+  transform: translateY(-50%);
   border: none;
   outline: none !important;
   cursor: pointer;
@@ -305,11 +310,11 @@
     display: block;
     margin-bottom: 9em;
     &:nth-child(1) {
-      transform: translate(10em, 30em) rotate(135deg);
+      transform: translate(15em, 45em) rotate(135deg);
     }
 
     &:nth-child(2) {
-      transform: translate(10em, 18.5em) rotate(-135deg);
+      transform: translate(15em, 10em) rotate(-135deg);
     }
   }
 }
@@ -321,7 +326,9 @@
   height: 100px;
   opacity: 1;
   font-size: 1.5px;
-  margin: 45% 0;
+  top: 30%;
+  left: 0;
+  transform: translateY(-50%);
   border: none;
   outline: none !important;
   cursor: pointer;
@@ -332,11 +339,11 @@
     display: block;
     margin-bottom: 9em;
     &:nth-child(1) {
-      transform: translate(10em, 30em) rotate(135deg);
+      transform: translate(10em, 20em) rotate(135deg);
     }
 
     &:nth-child(2) {
-      transform: translate(10em, 18.5em) rotate(-135deg);
+      transform: translate(10em, 32em) rotate(-135deg);
     }
   }
 }
