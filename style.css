@@ -394,6 +394,40 @@
           transform: translate(15em, 10em) rotate(-135deg);
 }
 
+#inview-up-1 {
+  float: right;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  font-size: 1.5px;
+  top: 30%;
+  left: 7%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+}
+
+#inview-up-1 > span {
+  background-color: white;
+  width: 35em;
+  height: 2em;
+  display: block;
+  margin-bottom: 9em;
+}
+
+#inview-up-1 > span:nth-child(1) {
+  -webkit-transform: translate(15em, 45em) rotate(135deg);
+          transform: translate(15em, 45em) rotate(135deg);
+}
+
+#inview-up-1 > span:nth-child(2) {
+  -webkit-transform: translate(15em, 10em) rotate(-135deg);
+          transform: translate(15em, 10em) rotate(-135deg);
+}
+
 #inview-down {
   position: relative;
   float: left;
