@@ -64,12 +64,12 @@ lists.forEach(li => {
     var el = "";
     let inviewhtml:string = "";
     let load :boolean = true;
-
-    document.body.requestFullscreen();
+    let positon = e;
     Fullscreen (serect);
       function Fullscreen (i: number){
         if (i != undefined) {
           const body = document.querySelector('body');
+          document.body.classList.add('overflow-hidden');
           serectnow = imgs[i];
           console.log(i);
           console.log(imgs.length);
@@ -85,11 +85,12 @@ lists.forEach(li => {
           } else {
             inviewhtml = `<div id=inview><div id=inview-exit><span></span><span></span></div><img id=inview-img src = ${serectnow}><div id=inview-up><span></span><span></span></div><div id=inview-down><span></span><span></span></div></div>`;
           }
-
-          body.insertAdjacentHTML('afterbegin', inviewhtml);
+          console.log(body);
+          i.insertAdjacentHTML('afterbegin', inviewhtml);
           document.getElementById("inview-exit").onclick = function() {
             el = document.getElementById('inview');
             el.remove();
+            document.body.classList.remove('overflow-hidden');
     
     
             setTimeout(	exitFullscreen ,10);
@@ -130,11 +131,6 @@ lists.forEach(li => {
 
   
 
-  document.body.addEventListener('keydown',
-  event => {
-    if (key_code == 27 ) {
-      console.log("esc");
-}
-});
+
 
 
