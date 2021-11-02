@@ -64,7 +64,8 @@ lists.forEach(li => {
     var el = "";
     let inviewhtml:string = "";
     let load :boolean = true;
-    let positon = e;
+    let positon = e.target.parentElement.parentElement;
+    console.log(positon);
     Fullscreen (serect);
       function Fullscreen (i: number){
         if (i != undefined) {

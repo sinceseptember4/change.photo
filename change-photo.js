@@ -61,7 +61,8 @@ lists.forEach(li => {
         var el = "";
         let inviewhtml = "";
         let load = true;
-        let positon = e;
+        let positon = e.target.parentElement.parentElement;
+        console.log(positon);
         Fullscreen(serect);
         function Fullscreen(i) {
             if (i != undefined) {
@@ -86,7 +87,8 @@ lists.forEach(li => {
                     inviewhtml = `<div id=inview><div id=inview-exit><span></span><span></span></div><img id=inview-img src = ${serectnow}><div id=inview-up><span></span><span></span></div><div id=inview-down><span></span><span></span></div></div>`;
                 }
                 console.log(body);
-                i.insertAdjacentHTML('afterbegin', inviewhtml);
+                body.insertAdjacentHTML('afterbegin', inviewhtml);
+                scrollTo(0, 0);
                 document.getElementById("inview-exit").onclick = function () {
                     el = document.getElementById('inview');
                     el.remove();
