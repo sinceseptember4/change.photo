@@ -77,24 +77,25 @@ lists.forEach(li => {
           let iplus = i+1;
           load = true;
           if (imgs.length == 1) {
-            inviewhtml = `<div id=inview><div id=inview-exit><span></span><span></span></div><img id=inview-img src = ${serectnow}></div>`;
-          } else if (i==0){
-            inviewhtml = `<div id=inview><div id=inview-exit><span></span><span></span></div><img id=inview-img src = ${serectnow}><div id=inview-up><span></span><span></span></div></div>`;
-          } else if (iplus ==imgs.length) {
-            inviewhtml = `<div id=inview><div id=inview-exit><span></span><span></span></div><img id=inview-img src = ${serectnow}><div id=inview-down><span></span><span></span></div></div>`;
-            load = false;
-          } else {
-            inviewhtml = `<div id=inview><div id=inview-exit><span></span><span></span></div><img id=inview-img src = ${serectnow}><div id=inview-up><span></span><span></span></div><div id=inview-down><span></span><span></span></div></div>`;
+            inviewhtml = `<div id=inview><img id=inview-img src = ${serectnow}></div><div id=inview-exit><span></span><span></span></div>`;
+          }
+          else if (i == 0) {
+              inviewhtml = `<div id=inview><img id=inview-img src = ${serectnow}><div id=inview-exit><span></span><span></span></div><div id=inview-up><span></span><span></span></div></div>`;
+          }
+          else if (iplus == imgs.length) {
+              inviewhtml = `<div id=inview><img id=inview-img src = ${serectnow}><div id=inview-exit><span></span><span></span></div><div id=inview-down><span></span><span></span></div></div>`;
+              load = false;
+          }
+          else {
+              inviewhtml = `<div id=inview><img id=inview-img src = ${serectnow}><div id=inview-exit><span></span><span></span></div><div id=inview-up><span></span><span></span></div><div id=inview-down><span></span><span></span></div></div>`;
           }
           console.log(body);
-          i.insertAdjacentHTML('afterbegin', inviewhtml);
+          body.insertAdjacentHTML('afterbegin', inviewhtml);
           document.getElementById("inview-exit").onclick = function() {
             el = document.getElementById('inview');
             el.remove();
             document.body.classList.remove('overflow-hidden');
-    
-    
-            setTimeout(	exitFullscreen ,10);
+            setTimeout(exitFullscreen, 10);
     
           };
           if (load) {
