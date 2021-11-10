@@ -306,16 +306,14 @@ body{
 }
 
 #inview-up {
-  float: right;
-  position: relative;
+  position: absolute;
   width: 100px;
   height: 100px;
   opacity: 1;
   font-size: 1.5px;
-  top: 500px;
-  left: 100px;
-  transform: translateY(-50%);
-  transform: translateY(-50%);
+  top: 50%;
+  left: 100%;
+  transform: translate(-100%,-50%);
   border: none;
   outline: none !important;
   cursor: pointer;
@@ -343,8 +341,8 @@ body{
   height: 100px;
   opacity: 0;
   font-size: 1.5px;
-  top: 30%;
-  left: 7%;
+  top: 50%;
+  left: 0%;
   transform: translateY(-50%);
   border: none;
   outline: none !important;
@@ -365,13 +363,13 @@ body{
   }
 }
 #inview-down {
-  position: relative;
+  position: absolute;
   float: left;
   width: 100px;
   height: 100px;
   opacity: 1;
   font-size: 1.5px;
-  top: 500px;
+  top: 50%;
   left: 0;
   transform: translateY(-50%);
   border: none;
