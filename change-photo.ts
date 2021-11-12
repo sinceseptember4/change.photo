@@ -66,7 +66,7 @@ lists.forEach(li => {
     let load :boolean = true;
     let positon = e.target.parentElement.parentElement;
     console.log(positon);
-    Fullscreen (serect);
+    window.Fullscreen (serect);
       function Fullscreen (i: number){
         if (i != undefined) {
           const body = document.querySelector('body');

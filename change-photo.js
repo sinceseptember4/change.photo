@@ -88,7 +88,7 @@ lists.forEach(li => {
                 }
                 console.log(body);
                 body.insertAdjacentHTML('afterbegin', inviewhtml);
-                scrollTo(0, 0);
+                window.scrollTo(0, 0);
                 document.getElementById("inview-exit").onclick = function () {
                     el = document.getElementById('inview');
                     el.remove();
