@@ -1,5 +1,5 @@
 # change.photo 
-himl ファイルにて以下の記述をする
+html ファイルにて以下の記述をする
 ```
    <div class="change-photo default">
         <ul>
